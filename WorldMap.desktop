@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Every Country Ranked
+Comment=Interactive 10-Year Geopolitical Outlook Map (100% Offline)
+Exec=bash -c "cd $(dirname %k) && ./run.sh"
+Terminal=false
+Type=Application
+Categories=Education;Geography;
+Icon=applications-internet
+StartupNotify=true

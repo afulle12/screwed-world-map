@@ -1,0 +1,38 @@
+name: CI & Test Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run automated test suite (Data Integrity, Performance, Security, Launchers)
+        run: npm test
+
+      - name: Build production bundle and standalone HTML files
+        run: npm run build
+
+      - name: Verify build artifacts exist
+        run: |
+          test -f dist/index.html
+          test -f world_map.html
+          test -f world_map_mobile.html
+          test -f WorldMap.exe
+          echo "All distribution and launcher artifacts successfully verified!"

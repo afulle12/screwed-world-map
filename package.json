@@ -1,0 +1,27 @@
+{
+  "name": "screwed-world-map",
+  "version": "1.0.0",
+  "description": "Interactive Offline React Map - Every Country, Ranked By How Screwed It Is",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/buildSingleFile.cjs",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "lucide-react": "^1.49.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  }
+}
